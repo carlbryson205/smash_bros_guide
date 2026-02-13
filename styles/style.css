@@ -1,0 +1,84 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== SMASH COLOR SYSTEM ===== */
+:root {
+    --bg-dark: #020617;
+    --bg-mid: #0f172a;
+    --card: #111827;
+
+    --smash-blue: #1da1ff;
+    --smash-red: #e11d48;
+    --smash-pink: #ff2fa6;
+    --smash-yellow: #facc15;
+
+    --text: #e5e7eb;
+    --text-dim: #94a3b8;
+}
+
+/* ===== BASE ===== */
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background:
+        radial-gradient(circle at 20% 0%, #0b1f3a, transparent 60%),
+        radial-gradient(circle at 80% 10%, #3a0b2e, transparent 55%),
+        var(--bg-dark);
+
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(120deg, #020617, #0f172a);
+    border-bottom: 3px solid var(--smash-red);
+    padding: 30px 16px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    background: linear-gradient(90deg,
+            var(--smash-yellow),
+            var(--smash-pink),
+            var(--smash-blue));
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 1250px;
+    margin: auto;
+    padding: 42px 20px;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: var(--smash-blue);
+    text-decoration: none;
+    transition: .2s;
+}
+
+a:hover {
+    color: var(--smash-yellow);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    color: var(--text-dim);
+    border-top: 1px solid #1f2937;
+}

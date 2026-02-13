@@ -1,0 +1,149 @@
+/* ===== GRID ===== */
+
+#character-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 30px;
+}
+
+/* ===== CARD ===== */
+
+.character {
+    background: linear-gradient(160deg, #020617, #0b1220);
+    border: 1px solid #1f2937;
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: transform .25s ease, box-shadow .25s ease, border .25s ease;
+}
+
+/* smash glow stripe */
+.character::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(29, 161, 255, .15),
+            rgba(255, 47, 166, .15),
+            transparent);
+    opacity: .35;
+    pointer-events: none;
+}
+
+.character:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--smash-blue);
+    box-shadow:
+        0 0 0 1px rgba(29, 161, 255, .4),
+        0 20px 45px rgba(0, 0, 0, .7);
+}
+
+/* ===== NUMBER ===== */
+
+.character>p:first-child {
+    font-size: .8rem;
+    color: var(--smash-yellow);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ===== NAME ===== */
+
+.character-link {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+}
+
+.character-link:hover {
+    color: var(--smash-pink);
+}
+
+/* ===== IMAGE ===== */
+
+.character img {
+    width: 100%;
+    height: 185px;
+    object-fit: contain;
+    border-radius: 14px;
+    padding: 12px;
+
+    background:
+        radial-gradient(circle, #0f172a, #020617);
+
+    border: 1px solid #1f2937;
+}
+
+/* ===== STATS ===== */
+
+.character p {
+    font-size: .95rem;
+    color: #cbd5f1;
+}
+
+.character strong {
+    color: var(--smash-yellow);
+}
+
+/* ===== BEST PLAYER BUTTON ===== */
+
+.character a:last-child {
+    margin-top: auto;
+    display: block;
+    text-align: center;
+
+    font-weight: 800;
+    font-size: .9rem;
+
+    padding: 9px 12px;
+    border-radius: 12px;
+
+    background: linear-gradient(90deg,
+            var(--smash-red),
+            var(--smash-pink));
+
+    color: white;
+    letter-spacing: .5px;
+
+    transition: .2s;
+}
+
+.character a:last-child:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 0 18px rgba(225, 29, 72, .45);
+}
+
+/* ===== TIER COLORS ===== */
+
+.tier-s {
+    color: #22ff88;
+}
+
+.tier-a {
+    color: var(--smash-blue);
+}
+
+.tier-b {
+    color: var(--smash-yellow);
+}
+
+.tier-c {
+    color: #fb7185;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    .character img {
+        height: 150px;
+    }
+}
